@@ -26,6 +26,7 @@ def get_info(request):
     if info is not None:
         dic = info.to_dict()
         dic['token'] = token
+        dic['videoUrl'] = info.video
         return HttpResponse(json.dumps(dic))
 
     logger.info(f'get {vtype.value} video info ==> {url}.')
@@ -38,6 +39,7 @@ def get_info(request):
         cache.save(token, info)
         dic = info.to_dict()
         dic['token'] = token
+        dic['videoUrl'] = info.video
         return HttpResponse(json.dumps(dic))
     return HttpResponseServerError(result.get_data())
 
