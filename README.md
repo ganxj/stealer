@@ -4,6 +4,14 @@
 
 项目使用 `python3` + `Vue` 开发，安装所需依赖:
 
+1、安装 conda
+
+`yum install conda -y`
+
+`conda create -n yolo python=3.10` #创建环境
+
+`conda activate yolo`
+
 `pip install -r requirements.txt --index-url https://pypi.douban.com/simple`
 OR
 ```shell script
